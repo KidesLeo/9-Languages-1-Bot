@@ -18,3 +18,8 @@ function generateString(length: number) {
 
 dotenv.config();
 
+const token = process.env.BOT_TOKEN || "";
+const bot = new Telegraf(token);
+
+bot.launch();
+
