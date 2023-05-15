@@ -15,3 +15,6 @@ function generateString(length: number) {
 
     return RandString;
 }
+
+dotenv.config();
+
