@@ -1,0 +1,7 @@
+{
+    "name": "password-generator-bot",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "author": "kidusleo <kidusleo@gmail.com>",
+    "license": "MIT"
+}
