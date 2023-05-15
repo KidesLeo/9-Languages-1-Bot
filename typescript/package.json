@@ -1,0 +1,13 @@
+{
+    "name": "password-generator-bot",
+    "version": "1.0.0",
+    "main": "index.ts",
+    "author": "kidusleo <kidusleo@gmail.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^20.1.4",
+        "dotenv": "^16.0.3",
+        "telegraf": "^4.12.2",
+        "tsx": "^3.12.7"
+    }
+}
