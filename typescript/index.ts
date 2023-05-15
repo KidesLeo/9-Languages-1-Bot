@@ -23,3 +23,4 @@ const bot = new Telegraf(token);
 
 bot.launch();
 
+console.log("Running bot...");
