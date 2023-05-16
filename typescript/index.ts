@@ -32,11 +32,19 @@ bot.start(async (ctx) =>
 );
 
 bot.command("generate", async (ctx) => {
-    const messageArr = ctx.update.message.text.split(" ");
+    const MessageArr = ctx.update.message.text.split(" ");
 
-    if (messageArr.length == 2) {
-        return ctx.reply(generateString(Number(messageArr[1])));
-    }
+    if (MessageArr.length == 2) {
+        return await ctx.replyWithMarkdownV2(
+            generateString(Number(MessageArr[1])),
+            {
+                parse_mode: "MarkdownV2",
+            }
+        );
+    } else if (MessageArr.length > 2)
+        return ctx.reply("Incorrect amount of arguments, try /help");
 
-    return ctx.reply(generateString(12));
+    return await ctx.replyWithMarkdownV2(generateString(12), {
+        parse_mode: "MarkdownV2",
+    });
 });
