@@ -13,7 +13,9 @@ function generateString(length: number) {
         );
     }
 
-    return RandString.replace(/[~!@#$%^&*()-_=+{}\|;:',.?]/g, "\\$&");
+    return (
+        "||" + RandString.replace(/[~!@#$%^&*()-_=+{}\|;:',.?]/g, "\\$&") + "||"
+    );
 }
 
 dotenv.config();
