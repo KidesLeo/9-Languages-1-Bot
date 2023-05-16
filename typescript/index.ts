@@ -50,3 +50,13 @@ bot.command("generate", async (ctx) => {
         parse_mode: "MarkdownV2",
     });
 });
+
+bot.command(
+    "help",
+    async (ctx) =>
+        await ctx.replyWithMarkdownV2(
+            "Use the /generate command to create an AlphaNumeric 12 character password\\. \nYou can also provide an argument to set the length of password, " +
+                "for example, `/generate 15`   to generate a string of 15 character\\.",
+            { parse_mode: "MarkdownV2" }
+        )
+);
