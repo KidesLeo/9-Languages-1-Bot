@@ -30,3 +30,13 @@ bot.start(async (ctx) =>
         "Press /generate to get a newly generated password. You can also send a number to receive a password of that length."
     )
 );
+
+bot.command("generate", async (ctx) => {
+    const messageArr = ctx.update.message.text.split(" ");
+
+    if (messageArr.length == 2) {
+        return ctx.reply(generateString(Number(messageArr[1])));
+    }
+
+    return ctx.reply(generateString(12));
+});
