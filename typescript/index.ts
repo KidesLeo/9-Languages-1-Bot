@@ -1,6 +1,10 @@
 import { Telegraf } from "telegraf";
 import * as dotenv from "dotenv";
 
+function escapeCleaner(text: string): string {
+    return text.replace(/[~!@#$%^&*()-_=+{}\|;:',.?]/g, "\\$&");
+}
+
 function generateString(length: number) {
     const KeyString =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-=";
@@ -13,11 +17,7 @@ function generateString(length: number) {
         );
     }
 
-    return RandString;
-}
-
-function escapeCleaner(text: string): string {
-    return text.replace(/[~!@$%^&*()-_=+{}\|;:',.?]/g, "\\$&");
+    return escapeCleaner(RandString);
 }
 
 dotenv.config();
