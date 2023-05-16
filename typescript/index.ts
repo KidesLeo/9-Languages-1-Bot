@@ -24,3 +24,9 @@ const bot = new Telegraf(token);
 bot.launch();
 
 console.log("Running bot...");
+
+bot.start(async (ctx) =>
+    ctx.reply(
+        "Press /generate to get a newly generated password. You can also send a number to receive a password of that length."
+    )
+);
