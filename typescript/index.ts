@@ -16,6 +16,10 @@ function generateString(length: number) {
     return RandString;
 }
 
+function escapeCleaner(text: string): string {
+    return text.replace(/[~!@$%^&*()-_=+{}\|;:',.?]/g, "\\$&");
+}
+
 dotenv.config();
 
 const token = process.env.BOT_TOKEN || "";
