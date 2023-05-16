@@ -4,6 +4,9 @@
     "main": "index.ts",
     "author": "kidusleo <kidusleo@gmail.com>",
     "license": "MIT",
+    "scripts": {
+        "dev": "tsx watch index.ts"
+    },
     "dependencies": {
         "@types/node": "^20.1.4",
         "dotenv": "^16.0.3",
