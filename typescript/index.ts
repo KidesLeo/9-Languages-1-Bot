@@ -8,11 +8,15 @@ function generateString(length: number) {
     let RandString = "";
 
     for (let i = 0; i < length; i++) {
+        /* We randomly select a character 
+        from the key and add it RandString*/
+
         RandString += KeyString.charAt(
             Math.floor(Math.random() * KeyString.length)
         );
     }
 
+    // Remove characters to fit markdown rule
     return (
         "||" + RandString.replace(/[~!@#$%^&*()-_=+{}\|;:',.?]/g, "\\$&") + "||"
     );
@@ -27,12 +31,14 @@ bot.launch();
 
 console.log("Running bot...");
 
+// Start command code
 bot.start(async (ctx) =>
     ctx.reply(
         "Press /generate to get a newly generated password. You can also send a number to receive a password of that length."
     )
 );
 
+// Generate command code
 bot.command("generate", async (ctx) => {
     const MessageArr = ctx.update.message.text.split(" ");
 
@@ -51,6 +57,7 @@ bot.command("generate", async (ctx) => {
     });
 });
 
+// Help command code
 bot.command(
     "help",
     async (ctx) =>
